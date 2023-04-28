@@ -7,6 +7,7 @@
     "start": "npm run dev",
     "dev": "vite",
     "build": "tsc && vite build",
+    "build:gh-pages": "tsc && vite build --base /viewport",
     "preview": "vite preview"
   },
   "dependencies": {
