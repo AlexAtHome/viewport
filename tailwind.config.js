@@ -1,10 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: 'media',
 	content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
 	theme: {
 		extend: {
       gridTemplateRows: {
-        layout: '60px 1fr 60px'
+        layout: '32px 1fr 32px'
       },
     },
 	},
