@@ -12,7 +12,8 @@
   },
   "dependencies": {
     "clsx": "^1.2.1",
-    "preact": "^10.13.1"
+    "preact": "^10.13.1",
+    "react-bootstrap-icons": "^1.10.3"
   },
   "devDependencies": {
     "@preact/preset-vite": "^2.5.0",
