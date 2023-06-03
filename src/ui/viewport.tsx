@@ -1,6 +1,7 @@
+import clsx from "clsx";
 import { FC, useEffect, useState } from "preact/compat";
 
-export const Viewport: FC = () => {
+export const Viewport: FC<{ className?: string }> = ({ className }) => {
 	const [viewport, setViewport] = useState<string>();
 
 	useEffect(() => {
@@ -17,7 +18,10 @@ export const Viewport: FC = () => {
 	}, []);
 
 	return (
-		<div class="big" aria-label="Your current viewport size">
+		<div
+			class={clsx([className, "text-9xl font-bold flex justify-center items-center"])}
+			aria-label="Your current viewport size"
+		>
 			{viewport}
 		</div>
 	);
