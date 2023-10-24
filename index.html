@@ -1,31 +1,29 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Current viewport</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Current viewport</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-</head>
-
-<body>
-  <output id="out" aria-label="Browser's current viewport resolution"></output>
-  <ul aria-label="Links" class="header">
-    <li>
-      <a href="https://github.com/AlexAtHome/viewport" target="_blank" rel="nofollow noreferrer noopener">Github</a>
-    </li>
-  </ul>
-  <script defer>
-    "use strict";
-    const output = document.getElementById("out");
-    function setViewport() {
-      const {clientWidth, clientHeight} = document.documentElement;
-      output.innerHTML = `${clientWidth} &times; ${clientHeight}`;
-    }
-    window.addEventListener("resize", setViewport);
-    setViewport();
-  </script>
-</body>
-
+  <body>
+    <div id="out" title="Browser's current viewport resolution"></div>
+    <a
+      href="https://github.com/AlexAtHome/viewport"
+      target="_blank"
+      rel="nofollow noreferrer noopener"
+      >Source code</a
+    >
+    <script async>
+      const output = document.getElementById("out");
+      function setViewport() {
+        const { clientWidth, clientHeight } = document.documentElement;
+        output.innerHTML = `${clientWidth} &times; ${clientHeight}`;
+      }
+      window.addEventListener("resize", setViewport);
+      setViewport();
+    </script>
+  </body>
 </html>
