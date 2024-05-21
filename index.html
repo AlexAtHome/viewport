@@ -1,77 +1,74 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Current viewport</title>
-    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-    <style>
-      :root {
-        --sat: 0.085;
-        --bg-lit: 85%;
-        --txt-lit: 5%;
-        --hue: 148;
-      }
 
-      @media (prefers-color-scheme: dark) {
-        :root {
-          --sat: 0.095;
-          --bg-lit: 20%;
-          --txt-lit: 100%;
-          --hue: 178;
-        }
-      }
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Current viewport</title>
+	<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+	<style>
+		:root {
+			--sat: 0.085;
+			--bg-lit: 85%;
+			--txt-lit: 5%;
+			--hue: 148;
+		}
 
-      html {
-        background-color: oklch(var(--bg-lit) var(--sat) var(--hue));
-        color: oklch(var(--txt-lit) var(--sat) var(--hue));
-        font-family:
-          system-ui,
-          -apple-system,
-          sans-serif;
-      }
+		@media (prefers-color-scheme: dark) {
+			:root {
+				--sat: 0.095;
+				--bg-lit: 20%;
+				--txt-lit: 100%;
+				--hue: 178;
+			}
+		}
 
-      body {
-        box-sizing: border-box;
-        margin: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        padding: 15px;
-      }
+		html {
+			background-color: oklch(var(--bg-lit) var(--sat) var(--hue));
+			color: oklch(var(--txt-lit) var(--sat) var(--hue));
+			font-family:
+				system-ui,
+				-apple-system,
+				sans-serif;
+		}
 
-      #out {
-        display: inline-flex;
-        font-weight: 700;
-        font-size: 10vw;
-      }
+		body {
+			box-sizing: border-box;
+			margin: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			min-height: 100vh;
+			padding: 15px;
+		}
 
-      a {
-        color: inherit;
-        position: absolute;
-        bottom: 30px;
-        right: 30px;
-      }
-    </style>
-  </head>
+		#out {
+			display: inline-flex;
+			font-weight: 700;
+			font-size: 10vw;
+		}
 
-  <body>
-    <div id="out" title="Browser's current viewport resolution"></div>
-    <a
-      href="https://github.com/AlexAtHome/viewport"
-      target="_blank"
-      rel="nofollow noreferrer noopener"
-      >Source code</a
-    >
-    <script async>
-      const output = document.getElementById("out");
-      function setViewport() {
-        const { clientWidth, clientHeight } = document.documentElement;
-        output.innerHTML = `${clientWidth} &times; ${clientHeight}`;
-      }
-      window.addEventListener("resize", setViewport);
-      setViewport();
-    </script>
-  </body>
+		a {
+			color: inherit;
+			position: absolute;
+			bottom: 30px;
+			right: 30px;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="out" title="Browser's current viewport resolution"></div>
+	<a href="https://github.com/AlexAtHome/viewport" target="_blank" rel="nofollow noreferrer noopener">Source code</a>
+	<script async>
+		const output = document.getElementById("out");
+		function setViewport() {
+			const {clientWidth, clientHeight} = document.documentElement;
+			output.innerHTML = `${clientWidth} &times; ${clientHeight}`;
+		}
+		window.addEventListener("resize", setViewport);
+		setViewport();
+	</script>
+</body>
+
 </html>
