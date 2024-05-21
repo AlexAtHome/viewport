@@ -10,7 +10,7 @@
 		:root {
 			--sat: 0.085;
 			--bg-lit: 85%;
-			--txt-lit: 5%;
+			--txt-lit: 50%;
 			--hue: 148;
 		}
 
@@ -26,10 +26,7 @@
 		html {
 			background-color: oklch(var(--bg-lit) var(--sat) var(--hue));
 			color: oklch(var(--txt-lit) var(--sat) var(--hue));
-			font-family:
-				system-ui,
-				-apple-system,
-				sans-serif;
+			font-family: system-ui, -apple-system, sans-serif;
 		}
 
 		body {
@@ -43,7 +40,6 @@
 		}
 
 		#out {
-			display: inline-flex;
 			font-weight: 700;
 			font-size: 10vw;
 		}
@@ -61,13 +57,14 @@
 	<div id="out" title="Browser's current viewport resolution"></div>
 	<a href="https://github.com/AlexAtHome/viewport" target="_blank" rel="nofollow noreferrer noopener">Source code</a>
 	<script async>
-		const output = document.getElementById("out");
 		function setViewport() {
-			const {clientWidth, clientHeight} = document.documentElement;
-			output.innerHTML = `${clientWidth} &times; ${clientHeight}`;
+			document.getElementById("out").innerHTML = `${document.documentElement.clientWidth} &times; ${document.documentElement.clientHeight}`;
 		}
 		window.addEventListener("resize", setViewport);
 		setViewport();
+
+		const hue = Math.floor(Math.random() * 256)
+		document.documentElement.style.setProperty('--hue', hue)
 	</script>
 </body>
 
