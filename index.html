@@ -46,16 +46,32 @@
 
 		a {
 			color: inherit;
+			display: inline-flex;
+			align-items: center;
+			gap: .25rem;
 			position: absolute;
 			bottom: 30px;
+			font-size: 1rem;
 			right: 30px;
+		}
+
+		a::before {
+			content: '';
+			width: 1.5rem;
+			height: 1.5rem;
+			display: inline-block;
+			background-image: url("https://alexalex.dev/images/pfp.png");
+			background-size: cover;
+			background-color: oklch(var(--bg-lit) var(--sat) var(--hue) / .5);
+			background-blend-mode: luminosity;
+			border-radius: 1rem;
 		}
 	</style>
 </head>
 
 <body>
 	<div id="out" title="Browser's current viewport resolution"></div>
-	<a href="https://github.com/AlexAtHome/viewport" target="_blank" rel="nofollow noreferrer noopener">Source code</a>
+	<a href="https://alexalex.dev" rel="nofollow noreferrer">alexalex.dev</a>
 	<script async>
 		function setViewport() {
 			document.getElementById("out").innerHTML = `${document.documentElement.clientWidth} &times; ${document.documentElement.clientHeight}`;
